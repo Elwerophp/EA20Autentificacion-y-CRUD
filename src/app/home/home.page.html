@@ -8,49 +8,49 @@
 
 <ion-content [fullscreen]="true">
 
-  
+
   <div id="container" class="text-center">
-    
-      <ion-label style="display: inline-block;
-      background-color: #87CEEB;
-      border: 2px solid #1E90FF;
+
+    <ion-label style="display: inline-block;
+      background-color: #87ebb1;
+      border: 2px solid #1eff62;
       color: #1E90FF;
       padding: 4px 8px;
       border-radius: 5px;
       font-weight: bold;
-      text-shadow: 1px 1px 2px rgba(0, 0, 255, 0.2);
-      box-shadow: 2px 2px 5px rgba(0, 0, 255, 0.1);">Agrega una cancion nueva!</ion-label><br><br><br>
-    
+      text-shadow: 1px 1px 2px rgba(68, 0, 255, 0.2);
+      box-shadow: 2px 2px 5px rgba(140, 0, 255, 0.1);">Agrega una pelicula nueva!</ion-label><br><br><br>
+
     <!--Inicio del formulario-->
     <form (submit)="addTask(); $event.preventDefault();">
 
-      <ion-label class="text-gray-400 text-lg font-semibold">Nombre de la cancion:</ion-label><br>
-      <input  class="border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-      type="text" [(ngModel)]="newTaskName" name="taskName" placeholder="Nombre//" required /><br>
+      <ion-label class="text-gray-400 text-lg font-semibold">Nombre de la Pelicula:</ion-label><br>
+      <input class="border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400" type="text"
+        [(ngModel)]="newTaskName" name="taskName" placeholder="Pelicula//" required /><br>
 
-      <ion-label class="text-gray-400 text-lg font-semibold" >Nombre del artista:</ion-label><br>
-      <input class="border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-      type="text" [(ngModel)]="newAuthorName" name="AuthorName" placeholder="Artista//" required /><br>
+      <ion-label class="text-gray-400 text-lg font-semibold">Nombre del director:</ion-label><br>
+      <input class="border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400" type="text"
+        [(ngModel)]="newAuthorName" name="AuthorName" placeholder="Director//" required /><br>
 
       <ion-label class="text-gray-400 text-lg font-semibold">enlace de la cancion:</ion-label><br>
-      <input  class="border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-      type="text" [(ngModel)]="newLinkName" name="LinkName" placeholder="Link//" required /><br>
+      <input class="border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400" type="text"
+        [(ngModel)]="newLinkName" name="LinkName" placeholder="Link//" required /><br>
 
-      <button class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-semibold font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-      type="submit">Agregar</button><br>
-    
+      <button
+        class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-semibold font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+        type="submit">Agregar</button><br>
+
     </form>
     <br><br>
-    <ion-label 
-    style="display: inline-block;
-    background-color: #87CEEB;
-    border: 2px solid #1E90FF;
-    color: #1E90FF;
+    <ion-label style="display: inline-block;
+    background-color: #87ebb9;
+    border: 2px solid #38ff1e;
+    color: #1ee5ff;
     padding: 4px 8px;
     border-radius: 5px;
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 255, 0.2);
-    box-shadow: 2px 2px 5px rgba(0, 0, 255, 0.1);">Canciones agregadas</ion-label><br>
+    text-shadow: 1px 1px 2px rgba(76, 0, 255, 0.2);
+    box-shadow: 2px 2px 5px rgba(0, 0, 255, 0.1);">Peliculas agregadas</ion-label><br>
 
     <!-- Tabla de tareas -->
     <table>
@@ -58,7 +58,7 @@
         <tr>
           <th class="text-purple-400 text-lg font-semibold">ID</th>
           <th class="text-purple-400 text-lg font-semibold">Nombre</th>
-          <th class="text-purple-400 text-lg font-semibold">Artista</th>
+          <th class="text-purple-400 text-lg font-semibold">Director</th>
           <th class="text-purple-400 text-lg font-semibold">enlace</th>
           <th class="text-purple-400 text-lg font-semibold">Acciones</th>
         </tr>
@@ -71,13 +71,13 @@
           <!-- Mostrar input si se está editando, si no, mostrar el nombre -->
           <td *ngIf="editingTaskId === item.id; else viewMode">
             <input class="border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            [(ngModel)]="editedTaskName" placeholder="Nuevo nombre" />
+              [(ngModel)]="editedTaskName" placeholder="Nueva pelicula" />
             <input class="border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            [(ngModel)]="editedAuthorName" placeholder="Nuevo artista" />
+              [(ngModel)]="editedAuthorName" placeholder="Nuevo director" />
             <input class="border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            [(ngModel)]="editedLinkName" placeholder="Nuevo enlace" /> <!-- Agregar este input -->
+              [(ngModel)]="editedLinkName" placeholder="Nuevo enlace" /> <!-- Agregar este input -->
           </td>
-          
+
           <ng-template #viewMode>
             <td>{{ item.name }}</td>
             <td>{{ item.author }}</td>
@@ -86,20 +86,24 @@
 
           <td>
             <!-- Botón Editar / Guardar -->
-            <button  class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-semibold font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-            style="margin: 5px;" *ngIf="editingTaskId !== item.id" (click)="startEdit(item)">Editar</button>
-            <button  class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-semibold font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-            style="margin: 5px;" *ngIf="editingTaskId === item.id" (click)="saveEdit(item.id!)">Guardar</button>
+            <button
+              class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-semibold font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+              style="margin: 5px;" *ngIf="editingTaskId !== item.id" (click)="startEdit(item)">Editar</button>
+            <button
+              class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-semibold font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+              style="margin: 5px;" *ngIf="editingTaskId === item.id" (click)="saveEdit(item.id!)">Guardar</button>
 
             <!-- Botón Eliminar -->
-            <button  class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-semibold font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-            [disabled]="!item.id" (click)="deleteTask(item.id!)">Eliminar</button>
+            <button
+              class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-semibold font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+              [disabled]="!item.id" (click)="deleteTask(item.id!)">Eliminar</button>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <button (click)="onLogout()" class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-semibold font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+    <button (click)="onLogout()"
+      class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-semibold font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
       Cerrar sesion</button>
 
   </div>
