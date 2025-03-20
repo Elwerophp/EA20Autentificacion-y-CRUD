@@ -5,14 +5,18 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyAE3ZDo-jrV3CvsRuDEP6upBXEQlHOUdfg",
-    authDomain: "lista-de-canciones-d4860.firebaseapp.com",
-    projectId: "lista-de-canciones-d4860",
-    storageBucket: "lista-de-canciones-d4860.firebasestorage.app",
-    messagingSenderId: "356790301489",
-    appId: "1:356790301489:web:96e6fa206afa23f196f610"
+    apiKey: "AIzaSyDHJyu1O_gS6miWPExi3GHaxxLvcxPvwFY",
+    authDomain: "ea20-d351a.firebaseapp.com",
+    projectId: "ea20-d351a",
+    storageBucket: "ea20-d351a.firebasestorage.app",
+    messagingSenderId: "58958807198",
+    appId: "1:58958807198:web:67d36164965f1dafba7b8f",
+    measurementId: "G-6BR0CNWHKG"
   }
 };
+
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file
